@@ -21,17 +21,32 @@ bool_t parse(int *current, int count, char const *strings[], Context *context) {
         printf("Version %s, date %s\n", version, date);
         return false;
         
-    } else if (strcmp(arg, "-r") == 0) {
+    } else if (strcmp(arg, "r") == 0) {
         
         reinstall_self();
-        
         return false;
+        
+    } else if (strcmp(arg, "i") == 0) {
+        
+        *current += 1;
+        
+        if (*current >= count) {
+            printf("Missing argument for command 'cpm i'.\n");
+            context->syntax_error = true;
+            return false;
+        }
+        
+        
+        
+        return true;
         
     }
     
     // ...
     else {
-        *current += 1;
+        printf("Unrecognized command '%s'.\n", strings[*current]);
+        context->syntax_error = true;
+        return false;
     }
     
     

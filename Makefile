@@ -3,7 +3,7 @@
 CC = gcc
 
 # Compiler flags
-CFLAGS = -Wall -Wextra -g -I src/include
+CFLAGS = -Wall -Wextra -g -I src/include -I src/scripts
 
 # Directories
 SRCDIR = src
@@ -19,7 +19,7 @@ SOURCES := $(shell find $(SRCDIR) -name '*.c')
 OBJECTS := $(SOURCES:%=$(BUILDDIR)/%.o)
 EXECUTABLE = cpm
 
-executable: $(BINDIR)/$(EXECUTABLE)
+executable: clean $(BINDIR)/$(EXECUTABLE)
 	sudo cp cpm $(EXEPATH)
 	sudo ln -fs $(EXEPATH) $(SYMLINK)
 
@@ -29,3 +29,6 @@ $(BINDIR)/$(EXECUTABLE): $(OBJECTS)
 $(BUILDDIR)/%.c.o: %.c
 	mkdir -p $(dir $@)
 	$(CC) $(CFLAGS) -c $< -o $@
+
+clean:
+	rm -rf cpm build

@@ -8,6 +8,8 @@ Context *init_context(void) {
     
     Context *c = malloc(sizeof(Context));
     
+    c->syntax_error = false;
+    
     return c;
     
 }
