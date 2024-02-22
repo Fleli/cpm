@@ -5,7 +5,6 @@ char *install_swift_pkg(char *github, char *exe_name, char *folder_name) {
     
     char *script = concat(12,
         "cd /opt/cpm"
-        " && ls "
         " && sudo rm -rf cpm_install_tmp"
         " && sudo rm -rf ", exe_name, 
         " && sudo mkdir cpm_install_tmp"

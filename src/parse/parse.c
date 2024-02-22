@@ -19,7 +19,7 @@ bool_t parse(int *current, int count, char const *strings[], Context *context) {
     
     if (strcmp(arg, "v") == 0) {
         
-        printf("\nVersion %s\nUpdated %s\n\n", version, date);
+        printf("Version %s\nUpdated %s\n\n", version, date);
         return false;
         
     } else if (strcmp(arg, "r") == 0) {
@@ -43,9 +43,9 @@ bool_t parse(int *current, int count, char const *strings[], Context *context) {
         *current += 1;
         
         if (success) {
-            printf("Successfully installed package '%s'.\n", name);
+            printf("\nSuccessfully installed package '%s'.\n\n", name);
         } else {
-            printf("Installation of package '%s' failed.\n", name);
+            printf("\nInstallation of package '%s' failed.\n\n", name);
         }
         
         return success;

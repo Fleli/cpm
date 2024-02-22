@@ -1,5 +1,5 @@
 
 #pragma once
 
-#define version "0.0.3"
+#define version "1.0.0"
 #define date "2024-02-22"
