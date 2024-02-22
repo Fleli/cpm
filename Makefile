@@ -16,6 +16,7 @@ EXECUTABLE = cpm
 executable: clean $(BINDIR)/$(EXECUTABLE)
 	@echo "\nRunning the CPM installer."
 	@echo "The installer may ask your password.\n"
+	@sudo mkdir -p /opt/cpm
 	@sudo cp cpm $(EXEPATH)
 	@sudo ln -fs $(EXEPATH) $(SYMLINK)
 	@echo "Finished.\n\nChad Package Manager is now available in your terminal through the command 'cpm'.\n"
