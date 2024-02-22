@@ -23,7 +23,7 @@ git clone https://github.com/Fleli/cpm
 Build the package manager. This requires the presence of a `C` compiler and the `make` program.
 
 ```
-make executable
+cd cpm && make executable
 ```
 
 Chad Package Manager is now available in your terminal through the `cpm` command.
