@@ -2,6 +2,8 @@
 #include <stdlib.h>
 #include <stdio.h>
 
+#include "meta.h"
+
 void reinstall_self(void) {
     
     char *prompts = 
@@ -14,9 +16,16 @@ void reinstall_self(void) {
         " && sudo make executable"
     ;
     
-    system(prompts);
+    int success = system(prompts);
     
-    printf("Terminating current CPM instance.\n");
+    if (success != 0) {
+        printf("\nUnsuccessful reinstall [code %d].\n", success);
+    } else {
+        printf("\nSuccessfully reinstalled Chad Package Manager.\n");
+    }
+    
+    printf("Terminating current CPM instance.\n\n");
+    
     exit(0);
     
 }

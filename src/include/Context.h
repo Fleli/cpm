@@ -6,6 +6,7 @@
 typedef struct {
     
     /* FLAGS */
+    bool_t show_help;
     bool_t syntax_error;
     
 } Context;

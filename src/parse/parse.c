@@ -17,9 +17,9 @@ bool_t parse(int *current, int count, char const *strings[], Context *context) {
     
     char const *arg = strings[*current];
     
-    if (strcmp(arg, "-v") == 0) {
+    if (strcmp(arg, "v") == 0) {
         
-        printf("Version %s, date %s\n", version, date);
+        printf("\nVersion %s\nUpdated %s\n\n", version, date);
         return false;
         
     } else if (strcmp(arg, "r") == 0) {

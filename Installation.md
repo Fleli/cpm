@@ -13,3 +13,5 @@ Open a terminal and run the following commands:
 3. Build the package manager. This requires the presence of a `C` compiler and the `make` program.
 
 `make executable`
+
+Chad Package Manager is now available in your terminal as `cpm`.

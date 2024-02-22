@@ -3,7 +3,7 @@
 CC = gcc
 
 # Compiler flags
-CFLAGS = -Wall -Wextra -g -I src/include -I src/scripts
+CFLAGS = -I src/include
 
 # Directories
 SRCDIR = src
