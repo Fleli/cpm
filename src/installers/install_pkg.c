@@ -6,13 +6,13 @@
 #include "install_pkg.h"
 #include "installers.h"
 
-bool_t install_pkg(char *name) {
+bool_t install_pkg(const char *name) {
     
     char *code = NULL;
     bool_t exists = true;
     
     if (strcmp(name, "pmax") == 0) {
-        
+        code = install_swift_pkg("https://github.com/Fleli/PMax", "pmax", "PMax");
     }
     
     else {

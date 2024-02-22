@@ -1,31 +1,21 @@
 
 #include "concat.h"
 
-char *install_swift_pkg(char *github, char *exe_name) {
+char *install_swift_pkg(char *github, char *exe_name, char *folder_name) {
     
-    char *s_start =
+    char *script = concat(12,
         "cd /opt/cpm"
-        "\nsudo mkdir temp"
-        "\ncd temp"
-        "\nsudo git clone "
-    ;
-    
-    char *s_build =
-        "\nswift package update"
-        "\nswift build -c debug"
-        "\ncp -rf .build/debug/"
-    ;
-    
-    char *s_destination =
-        "\n/opt/cpm/"
-    ;
-    
-    char *script = concat(3,
-        s_start,
-        github,
-        s_build,
-        exe_name,
-        s_destination
+        " && ls "
+        " && sudo rm -rf cpm_install_tmp"
+        " && sudo rm -rf ", exe_name, 
+        " && sudo mkdir cpm_install_tmp"
+        " && cd cpm_install_tmp"
+        " && sudo git clone ", github,
+        " && cd ", folder_name,
+        " && sudo swift package update"
+        " && sudo swift build -c debug"
+        " && sudo cp -rf .build/debug/", exe_name, " /opt/cpm/"
+        " && sudo ln -fs /opt/cpm/", exe_name, " /usr/local/bin/", exe_name
     );
     
     return script;

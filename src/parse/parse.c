@@ -7,6 +7,7 @@
 #include "Context.h"
 #include "meta.h"
 #include "reinstall_self.h"
+#include "install_pkg.h"
 
 bool_t parse(int *current, int count, char const *strings[], Context *context) {
     
@@ -36,9 +37,18 @@ bool_t parse(int *current, int count, char const *strings[], Context *context) {
             return false;
         }
         
+        const char *name = strings[*current];
+        bool_t success = install_pkg(name);
         
+        *current += 1;
         
-        return true;
+        if (success) {
+            printf("Successfully installed package '%s'.\n", name);
+        } else {
+            printf("Installation of package '%s' failed.\n", name);
+        }
+        
+        return success;
         
     }
     
