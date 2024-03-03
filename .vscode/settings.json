@@ -1,0 +1,6 @@
+{
+    "files.associations": {
+        "installers.h": "c",
+        "install_pkg.h": "c"
+    }
+}

@@ -38,6 +38,9 @@ bool_t parse(int *current, int count, char const *strings[], Context *context) {
         }
         
         const char *name = strings[*current];
+        
+        printf("Installing package '%s'. The installer may ask for your password.\n\n", name);
+        
         bool_t success = install_pkg(name);
         
         *current += 1;

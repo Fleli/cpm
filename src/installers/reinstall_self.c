@@ -6,6 +6,12 @@
 
 void reinstall_self(void) {
     
+    printf(
+        "Reinstalling Chad Package Manager."
+        "\nPrograms already installed through CPM are kept."
+        "\n\n"
+    );
+    
     char *prompts = 
         "cd /opt/cpm"
         " && sudo rm -rf cpminstaller"
