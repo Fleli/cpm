@@ -25,7 +25,7 @@ bool_t install_pkg(const char *name) {
             install_pkg("pmax-stdlib")
         );
     } else if (strcmp(name, "pmax-stdlib") == 0) {
-        code = install_lib_pkg("https://github.com/Fleli/pmax-stdlib", "pmax-packages");
+        code = install_lib_pkg("https://github.com/Fleli/pmax-stdlib", "pmax-packages", "pmax-stdlib");
     }
     
     else {
