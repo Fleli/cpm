@@ -7,7 +7,7 @@ char *install_lib_pkg(char *github, char *category, char *result_folder) {
         "cd /opt/cpm"
         " && sudo mkdir -p libraries/", category,
         " && cd libraries/", category,
-        " && rm -rf ", result_folder,
+        " && sudo rm -rf ", result_folder,
         " && sudo git clone ", github
     );
     
